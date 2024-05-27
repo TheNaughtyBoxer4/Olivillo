@@ -34,7 +34,7 @@ body {
   box-sizing:border-box;
   left:50%;
   padding:10vmin;
-  position:fixed;
+  position:absolute;
   text-align:center;
   top:50%;
   transform:translate(-50%, -50%);
@@ -59,4 +59,58 @@ h2 {
 
 .contador {
   font-family: 'Poppins';
+  p {
+    font-family: 'Poppins';
+  }
+}
+
+.slider {
+  width: 80%;
+  max-width: 800px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  h1 {
+    font-family: 'Poppins';
+    text-align: center;
+    margin-top: 80px;
+  }
+}
+
+.slides {
+  display: flex;
+  transition: transform 1s ease;
+  margin-bottom: 20px;
+}
+
+.slide {
+  min-width: 100%;
+}
+
+.main {
+  margin-top: 614px;
+  text-align: center;
+  h1 {
+    font-family: 'Poppins';
+  }
+  iframe {
+    width: 325px;
+    height: 272px;
+  }
+}
+
+.slides {
+  img {
+    border-radius: 20px;
+    object-fit: cover;
+  }
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+  small {
+    align-self: flex-end;
+  }
 }
