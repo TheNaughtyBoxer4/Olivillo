@@ -114,3 +114,39 @@ h2 {
     align-self: flex-end;
   }
 }
+
+.menu {
+  display: flex;
+  width: 73px;
+  height: 50px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+table {
+  background: #ffffff;
+  font-family: 'monospace';
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 12px;
+  thead {
+    th:first-child {
+      border: none;
+      background: none;
+    }
+    th {
+      border: 1px solid black;
+      background: #82FFFF;
+    }
+  }
+  tbody {
+    tr {
+      border-bottom: 1px solid black;
+      td:first-child {
+        border: 1px solid black;
+        background: #fdfd96;
+        font-weight: bold;
+      }
+    }
+  }
+}
