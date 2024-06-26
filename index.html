@@ -10,17 +10,38 @@
   <script src="./slider.js" defer></script>
 </head>
 <body>
-  <audio src="./src/epic.mp3" autoplay loop id="epic"></audio>
+  <audio src="./src/epic.mp3" loop id="epic"></audio>
   <script>
     let audio = document.getElementById("epic");
-
-    function handleClick() {
-      audio.play();
-      document.removeEventListener("click", handleClick);
-      document.addEventListener("click", handleClick);
+    let audioPlayed = false;
+  
+    function handleScroll() {
+      // Calculamos la altura total de la página
+      const totalHeight = document.documentElement.scrollHeight;
+      // Calculamos el 5% de la altura total
+      const fivePercent = totalHeight * 0.05;
+  
+      // Si el usuario ha hecho scroll más allá del 5%, reproducimos el audio
+      if (window.scrollY >= fivePercent && !audioPlayed) {
+        playAudio();
+        audioPlayed = true;
+      }
     }
-
-    handleClick();
+  
+    function playAudio() {
+      audio.play().catch(error => {
+        console.error('Error al reproducir el audio:', error.message);
+      });
+    }
+  
+    // Agregamos el event listener para detectar el scroll
+    window.addEventListener("scroll", handleScroll);
+  
+    // Simulamos la interacción del usuario al cargar la página
+    window.addEventListener("DOMContentLoaded", () => {
+      playAudio();
+      audioPlayed = true;
+    });
   </script>
   <div class="bg">
   </div>
